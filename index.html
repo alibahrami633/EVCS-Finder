@@ -3,11 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Materialize - Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Material Design Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Link to JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>E V C S Finder</title>
 </head>
 
-<body>
+<body class="brown lighten-5">
+    <header class="evcs-header valign-wrapper">
+        <div class="container center">
+            <h4><i class="small material-icons">directions_car</i> E V C S &nbsp;
+                Finder</h4>
+        </div>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col s12 m5 l3">
+                <div class="card">
+                    <div class="card-content">
+                        <h5 class="evcs-text-color">Search</h5>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="suburb-name" class="active">Suburb</label>
+                                <input placeholder="Suburb Name" id="suburb-name" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="search-area" class="active">Area : <span id="search-area-value">5</span>
+                                    Km</label>
+                                <p class="range-field">
+                                    <input type="range" id="search-area" min="2" max="50" value="5" />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="input-field col s12 right-align">
+                                <button class="btn waves-effect waves-light" type="submit" id="search-evcs">Search
+                                    <i class="material-icons left">search</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7 l9">
+                <!-- Map Panel -->
+                <div class="card-panel" id="map">
 
+                </div>
+                <!-- Map Panel -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <!-- Search Results Panel -->
+                <div class="card-panel" id="search-results">
+
+                </div>
+                <!-- Search Results Panel -->
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer transparent">
+        <div class="footer-copyright lighten-4 brown">
+            <div class="container evcs-text-color text-darken-4 accent-3 center">
+                <strong>© 2020 E V C S Finder</strong>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to javascript files -->
+    <script src="assets/script/script.js"></script>
 </body>
 
 </html>
