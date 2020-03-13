@@ -1,0 +1,31 @@
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    /* Added for sticky footer support */
+    display: flex; 
+    min-height: 100vh;
+    flex-direction: column;
+    /* Added for sticky footer support */
+  }
+
+/* Added for sticky footer support */
+main {
+  flex: 1 0 auto;
+  }
+/* Added for sticky footer support */
+ 
+.evcs-header {
+    height: 8vh;
+    background-color: teal;
+    color: white;
+}
+
+.evcs-back-color{
+    background-color: teal;
+}
+
+.evcs-text-color{
+  color: teal;
+}
