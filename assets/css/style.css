@@ -1,33 +1,40 @@
 
-  body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1;
-    /* Added for sticky footer support */
-    display: flex; 
-    min-height: 100vh;
-    flex-direction: column;
-    /* Added for sticky footer support */
-  }
+body {
+  background-color: #252531;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin-bottom: 5rem;
+  line-height: 1;
+  /* Added for sticky footer support */
+  display: flex; 
+  min-height: 100vh;
+  flex-direction: column;
+  /* Added for sticky footer support */
+}
 
 /* Added for sticky footer support */
 main {
   flex: 1 0 auto;
-  }
+}
 /* Added for sticky footer support */
  
 .evcs-header {
-    height: 8vh;
-    background-color: teal;
+    height: 5rem;
+    background-color: #7ED45E;
     color: white;
 }
 
 .evcs-back-color {
-    background-color: teal;
+    background-color: #7ED45E;
 }
 
 .evcs-text-color {
-  color: teal;
+  color: #7ED45E;
+}
+
+.evcs-text {
+  color: #252531;
+  font-weight: bold;
 }
 
 .evcs-main{
@@ -46,6 +53,40 @@ main {
 
 .search-button-margin{
   margin-top: 2em;
+}
+
+/* Map related CSS*/
+#map {
+  height: 83.3%;
+  width: 100%;
+  padding: 1 rem;
+  margin-bottom: 5rem;
+}
+
+#search-results {
+  min-height: 15rem;;
+  margin-bottom: 5rem;
+}
+ 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* =============== */
+.btn, .footer {
+  background-color: #7ED45E;
+}
+
+.footer {
+  height: 5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-top: 2rem;
+  box-shadow: 20px 20px 18px 20px #ffffff;
 }
 
 /* "search" button margin scales for smaller viewports*/
