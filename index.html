@@ -16,44 +16,67 @@
 
 <body class="brown lighten-5">
     <header class="evcs-header valign-wrapper">
-        <div class="container center">
+        <div class="container center ">
             <h4><i class="small material-icons">directions_car</i> E V C S &nbsp;
                 Finder</h4>
         </div>
     </header>
-    <main>
+    <main class="container evcs-main">
         <div class="row">
-            <div class="col s12 m5 l3">
-                <div class="card">
-                    <div class="card-content">
-                        <h5 class="evcs-text-color">Search</h5>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <label for="suburb-name" class="active">Suburb</label>
-                                <input placeholder="Suburb Name" id="suburb-name" type="text">
+            <div class="col s12 l4">
+                <!-- Search Panel -->
+                <div class="card-panel">
+                    <form class="card-content">
+                        <div class="row no-margin">
+                            <div class="input-field col s12 no-margin">
+                                <h5 class="evcs-text-color">Search</h5>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <label for="search-area" class="active">Area : <span id="search-area-value">5</span>
-                                    Km</label>
+                                <div class="switch">
+                                    <label for="current-location">
+                                        Use Current Location
+                                        <input type="checkbox" id="current-location">
+                                        <span class="lever"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row no-margin" id="search-by-location">
+                            <div class="input-field col s12 m8">
+                                <label for="search-suburb" class="active">Suburb / Postcode</label>
+                                <input placeholder="Enter suburb or postcode" id="search-suburb" type="text"
+                                    class="autocomplete select-font">
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <label for="search-country" class="active">Country</label>
+                                <select id="search-country" class="select-font">
+                                    <option value="AU" selected>Australia</option>
+                                    <option value="US">United States</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row no-margin">
+                            <div class="input-field col s12 m9 l8">
+                                <label for="search-area" class="active">Area : &nbsp;<span class="chip">
+                                        <span id="search-area-value">5</span>
+                                        Km</span></label>
                                 <p class="range-field">
-                                    <input type="range" id="search-area" min="2" max="50" value="5" />
+                                    <input type="range" id="search-area" min="1" max="50" value="5" />
                                 </p>
                             </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="row">
-                            <div class="input-field col s12 right-align">
-                                <button class="btn waves-effect waves-light" type="submit" id="search-evcs">Search
-                                    <i class="material-icons left">search</i>
+                            <div class="input-field col s12 m3 l4 right-align search-button-margin">
+                                <button class="btn waves-effect waves-light" type="submit" id="search-evcs">
+                                    Search<i class="material-icons left">search</i></span>
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-            <div class="col s12 m7 l9">
+            <!-- Search Panel -->
+            <div class="col s12 l8">
                 <!-- Map Panel -->
                 <div class="card-panel" id="map">
 
@@ -78,8 +101,19 @@
             </div>
         </div>
     </footer>
-
+    <!-- Modal Structure -->
+    <div id="search-modal" class="modal">
+        <div class="modal-content">
+            <h5>EVCS Finder</h5>
+            <p id="modal-message"></p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
     <!-- Link to javascript files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/script/location-helper.js"></script>
     <script src="assets/script/script.js"></script>
 </body>
 
