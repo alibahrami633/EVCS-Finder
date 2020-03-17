@@ -29,3 +29,28 @@ main {
 .evcs-text-color{
   color: teal;
 }
+
+.evcs-main{
+  padding-top: 1%;
+  max-width: 95%;
+  width: 95%;
+}
+
+.no-margin {
+  margin:0px;
+}
+
+.dropdown-content li > span, select > option, .select {
+  font-size: 15px;
+}
+
+.search-button-margin{
+  margin-top: 2em;
+}
+
+/* "search" button margin scales for smaller viewports*/
+@media (max-width: 600px) {
+  .search-button-margin{
+    margin-top: auto;
+  }  
+}
