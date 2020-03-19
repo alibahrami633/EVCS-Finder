@@ -24,7 +24,7 @@ main {
     color: white;
 }
 
-.evcs-back-color {
+.evcs-back-color, input[type=range]+.thumb {
     background-color: #7ED45E;
 }
 
