@@ -17,7 +17,7 @@ function initMap() {
 }
 
 // Here we are building the URL we need to query the database
-var qURL = "https://api.openchargemap.io/v3/poi/?key=" + EVAPIKey + "&output=json&countrycode=" + countryCode + "&maxresults=10";
+var qURL = "https://api.openchargemap.io/v3/poi/?key=" + EVAPIKey + "&output=json&countrycode=" + countryCode + "&maxresults=5";
 
 $.ajax({
     url: qURL,
@@ -42,7 +42,6 @@ $(document).on("click", ".selectStationBtn", function (event) {
     locationResult.lng = resultLng;
 
     initMap();
-    debugger;
     setMarker();
 });
 
