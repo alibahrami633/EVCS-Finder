@@ -52,7 +52,7 @@ class LocationHelper {
      * @returns {string} address geocode query URL
      */
     buildAddressGeocodeURL(address, country) {
-        var queryUrl = "http://api.geonames.org/geoCodeAddressJSON?";
+        var queryUrl = "https://secure.geonames.org/geoCodeAddressJSON?";
         // Remove all numbers / postcode from address
         var queryAddress = address.replace(/\d+/g, "").trim();
         var queryParams = {
@@ -71,7 +71,7 @@ class LocationHelper {
      */
     buildAddressSearchURL(address, country) {
         var postalcode = parseInt(address);
-        var queryUrl = "http://api.geonames.org/postalCodeSearchJSON?";
+        var queryUrl = "https://secure.geonames.org/postalCodeSearchJSON?";
         var queryParams = {
             "country": country,
             "username": geonamesAPIUsername
