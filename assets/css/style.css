@@ -24,7 +24,7 @@ main {
     color: white;
 }
 
-.evcs-back-color, input[type=range]+.thumb {
+.evcs-back-color, input[type=range]+.thumb, .selectStationBtn:focus {
     background-color: #7ED45E;
 }
 
@@ -45,6 +45,10 @@ main {
 
 .no-margin {
   margin:0px;
+}
+
+.location-info {
+  display: block;
 }
 
 .dropdown-content li > span, select > option, .select {

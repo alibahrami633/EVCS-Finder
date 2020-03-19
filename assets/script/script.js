@@ -116,6 +116,6 @@ $(document).ready(function () {
 
     // **TBD** replace with atul's search function **TBD**
     function searchChargingStations(lat, lon, radius) {
-        console.log(lat, lon, radius);
+        // console.log(lat, lon, radius);
     }
 });
