@@ -52,14 +52,23 @@ class LocationHelper {
      * @returns {string} address geocode query URL
      */
     buildAddressGeocodeURL(address, country) {
-        var queryUrl = "https://secure.geonames.org/geoCodeAddressJSON?";
-        // Remove all numbers / postcode from address
-        var queryAddress = address.replace(/\d+/g, "").trim();
+        var queryUrl;
+        var postalcode = parseInt(address);
         var queryParams = {
-            "q": queryAddress,
             "country": country,
             "username": geonamesAPIUsername
         };
+        if (isNaN(postalcode) == false && postalcode > 0 && postalcode == address) {
+            // Search by postcode
+            queryUrl = "https://secure.geonames.org/postalCodeLookupJSON?";
+            queryParams.postalcode = postalcode;
+            queryParams.maxRows = 1;
+        } else {
+            // Remove all numbers / postcode from address
+            queryUrl = "https://secure.geonames.org/geoCodeAddressJSON?";
+            var queryAddress = address.replace(/\d+/g, "").trim();
+            queryParams.q = queryAddress;
+        }
         return queryUrl + $.param(queryParams);
     }
 
@@ -202,7 +211,13 @@ class LocationHelper {
                 successHandler(response.address.lat, response.address.lng, searchCriteria.radius);
                 return;
             }
+        } else if ("postalcodes" in response) {
+            if (response.postalcodes != undefined && response.postalcodes.length > 0) {
+                this.updateSearchCriteria(searchCriteria);
+                successHandler(response.postalcodes[0].lat, response.postalcodes[0].lng, searchCriteria.radius);
+                return;
+            }
         }
-        errorHandler("No results found for this address!");
+        successHandler(0, 0, searchCriteria.radius);
     }
 }

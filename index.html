@@ -29,59 +29,61 @@
         <div class="row">
             <div class="col s12 l4">
                 <!-- Search Panel -->
-                <div class="row">
-                    <div class="card-panel">
-                        <form class="card-content">
-                            <div class="row no-margin">
-                                <div class="input-field col s12 no-margin">
-                                    <h5 class="evcs-text-color">Search</h5>
+                <div class="card-panel search-container">
+                    <form class="card-content no-margin">
+                        <div class="row no-margin">
+                            <div class="input-field col s12 no-margin">
+                                <h5 class="evcs-text-color">Search</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div class="switch">
+                                    <label for="current-location">
+                                        Use Current Location
+                                        <input type="checkbox" id="current-location">
+                                        <span class="lever"></span>
+                                    </label>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <div class="switch">
-                                        <label for="current-location">
-                                            Use Current Location
-                                            <input type="checkbox" id="current-location">
-                                            <span class="lever"></span>
-                                        </label>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="row no-margin" id="search-by-location">
+                            <div class="input-field col s12 m8">
+                                <label for="search-suburb" class="active">Suburb / Postcode</label>
+                                <input placeholder="Enter suburb or postcode" id="search-suburb" type="text"
+                                    class="autocomplete select-font">
                             </div>
-                            <div class="row no-margin" id="search-by-location">
-                                <div class="input-field col s12 m8">
-                                    <label for="search-suburb" class="active">Suburb / Postcode</label>
-                                    <input placeholder="Enter suburb or postcode" id="search-suburb" type="text"
-                                        class="autocomplete select-font">
-                                </div>
-                                <div class="input-field col s12 m4">
-                                    <label for="search-country" class="active">Country</label>
-                                    <select id="search-country" class="select-font">
-                                        <option value="AU" selected>Australia</option>
-                                        <option value="US">United States</option>
-                                    </select>
-                                </div>
+                            <div class="input-field col s12 m4">
+                                <label for="search-country" class="active">Country</label>
+                                <select id="search-country" class="select-font">
+                                    <option value="AU" selected>Australia</option>
+                                    <option value="US">United States</option>
+                                </select>
                             </div>
-                            <div class="row no-margin">
-                                <div class="input-field col s12 m9 l8">
-                                    <label for="search-area" class="active">Area : &nbsp;<span class="chip">
-                                            <span id="search-area-value">5</span>
-                                            Km</span></label>
-                                    <p class="range-field" id="range-field">
-                                        <input type="range" id="search-area" min="1" max="50" value="5" />
-                                    </p>
-                                </div>
-                                <div class="input-field col s12 m3 l4 right-align search-button-margin">
-                                    <button class="btn waves-effect waves-light" type="submit" id="search-evcs">
-                                        Search<i class="material-icons left">search</i></span>
-                                    </button>
-                                </div>
+                        </div>
+                        <div class="row no-margin">
+                            <div class="input-field col s12 m9 l8">
+                                <label for="search-area" class="active">Area : &nbsp;<span class="chip">
+                                        <span id="search-area-value">5</span>
+                                        Km</span></label>
+                                <p class="range-field" id="range-field">
+                                    <input type="range" id="search-area" min="1" max="50" value="5" />
+                                </p>
                             </div>
-                        </form>
+                            <div class="input-field col s12 m3 l4 right-align search-button-margin">
+                                <button class="btn waves-effect waves-light" type="submit" id="search-evcs">
+                                    Search<i class="material-icons left">search</i></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row no-margin">
+                    <div class="col s12 no-margin">
+                        <!-- Search Results Panel -->
+                        <div class="card-panel" id="search-results"></div>
+                        <!-- Search Results Panel -->
                     </div>
-                    <!-- Search Results Panel -->
-                    <div class="card-panel" id="search-results"></div>
-                    <!-- Search Results Panel -->
                 </div>
             </div>
             <!-- Search Panel -->
