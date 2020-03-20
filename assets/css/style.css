@@ -5,18 +5,7 @@ body {
   font-size: 16px;
   margin-bottom: 5rem;
   line-height: 1;
-  /* Added for sticky footer support */
-  display: flex; 
-  min-height: 100vh;
-  flex-direction: column;
-  /* Added for sticky footer support */
 }
-
-/* Added for sticky footer support */
-main {
-  flex: 1 0 auto;
-}
-/* Added for sticky footer support */
  
 .evcs-header {
     height: 5rem;
@@ -41,6 +30,8 @@ main {
   padding-top: 1%;
   max-width: 95%;
   width: 95%;
+  max-height: 75%;
+  height: 75%;
 }
 
 .no-margin {
@@ -61,15 +52,18 @@ main {
 
 /* Map related CSS*/
 #map {
-  height: 83.3%;
-  width: 100%;
+  height: 100%;
+  width: auto;
   padding: 1 rem;
-  margin-bottom: 5rem;
 }
 
 #search-results {
-  min-height: 15rem;;
   margin-bottom: 5rem;
+  padding-bottom: 1rem;
+  min-height: 200px;
+  max-height: calc(75% - 190px);
+  height: auto;
+  overflow-y: auto;
 }
  
 html, body {
@@ -91,6 +85,16 @@ html, body {
   text-align: center;
   padding-top: 2rem;
   box-shadow: 20px 20px 18px 20px #ffffff;
+  z-index: 1;
+}
+
+.search-container{
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+.selectStationBtn{
+  margin-right: 1rem;
 }
 
 /* "search" button margin scales for smaller viewports*/
@@ -98,4 +102,14 @@ html, body {
   .search-button-margin{
     margin-top: auto;
   }  
+}  
+
+@media (max-width: 992px) {
+  #search-results {
+    margin-bottom: 1rem;
+  }
+  
+  #map {
+    margin-bottom: 5rem;
+  }
 }
