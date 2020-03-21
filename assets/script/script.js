@@ -1,7 +1,7 @@
 // Note: This javascript file references classes and functions from location-helper.js
 var EVAPIKey = "21867314-57f0-4dcd-a708-cb5cd1571737";
 
-$(document).ready(function () {
+$(document).ready(function() {
   var locationHelper = new LocationHelper();
 
   /** Executes the Search for the criteria specified */
@@ -146,13 +146,13 @@ $(document).ready(function () {
       longitude: lon,
       distance: radius,
       distanceunit: "KM",
-      maxresults: 10
+      maxresults: 5
     };
     $("#search-results").empty();
     $.ajax({
       url: qURL + $.param(queryParams),
       method: "GET"
-    }).then(function (response) {
+    }).then(function(response) {
       var title;
       var addressLine1;
       var town;
@@ -163,10 +163,15 @@ $(document).ready(function () {
         $("#search-results").html("No results found!");
         return;
       }
-
+      var counter = 0;
       for (var i = 0; i < response.length; i++) {
         var latt = response[i].AddressInfo.Latitude;
         var longg = response[i].AddressInfo.Longitude;
+        if (counter === 0) {
+          counter++;
+          firstResult(latt, longg);
+        }
+
         title = response[i].AddressInfo.Title;
         addressLine1 = response[i].AddressInfo.AddressLine1;
         if (addressLine1 === null) {
@@ -187,35 +192,35 @@ $(document).ready(function () {
         var resultDiv = $("<div>");
         resultDiv.html(
           "<button data-lat='" +
-          latt +
-          "' data-long='" +
-          longg +
-          "' class='btn-floating selectStationBtn evcs-back-color right'><i class='material-icons'>location_on</i></button>" +
-          "<span id='title" +
-          i +
-          "' class='location-info'>" +
-          title +
-          "</span><span id='addressLine1" +
-          i +
-          "' class='location-info'>" +
-          addressLine1 +
-          "</span><span id='town" +
-          i +
-          "' class='location-info'>" +
-          town +
-          "</span><span id='state" +
-          i +
-          "' class='location-info'>" +
-          state +
-          "</span><span id='postcode" +
-          i +
-          "' class='location-info'>" +
-          postcode +
-          "</span><hr />"
+            latt +
+            "' data-long='" +
+            longg +
+            "' class='btn-floating selectStationBtn evcs-back-color right'><i class='material-icons'>location_on</i></button>" +
+            "<span id='title" +
+            i +
+            "' class='location-info'>" +
+            title +
+            "</span><span id='addressLine1" +
+            i +
+            "' class='location-info'>" +
+            addressLine1 +
+            "</span><span id='town" +
+            i +
+            "' class='location-info'>" +
+            town +
+            "</span><span id='state" +
+            i +
+            "' class='location-info'>" +
+            state +
+            "</span><span id='postcode" +
+            i +
+            "' class='location-info'>" +
+            postcode +
+            "</span><hr />"
         );
 
         $("#search-results").append(resultDiv);
-        $('.fixed-action-btn').floatingActionButton();
+        $(".fixed-action-btn").floatingActionButton();
       }
     });
   }
