@@ -19,13 +19,20 @@ function initMap() {
 $(document).on("click", ".selectStationBtn", function(event) {
   var resultLat = Number($(this).data("lat"));
   var resultLng = Number($(this).data("long"));
-  console.log(resultLat + ", " + resultLng);
   locationResult.lat = resultLat;
   locationResult.lng = resultLng;
 
   initMap();
   setMarker();
 });
+
+function firstResult(firstLat, firstLon) {
+  locationResult.lat = firstLat;
+  locationResult.lng = firstLon;
+
+  initMap();
+  setMarker();
+}
 
 // Sets the marker on the map based on the selected location in results area
 function setMarker() {

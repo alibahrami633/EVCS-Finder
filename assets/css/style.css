@@ -1,24 +1,35 @@
-
 body {
   background-color: #252531;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   margin-bottom: 5rem;
   line-height: 1;
 }
- 
+
 .evcs-header {
-    height: 5rem;
-    background-color: #7ED45E;
-    color: white;
+  height: 5rem;
+  background-color: #7ed45e;
+  color: white;
+  padding-top: 0.2rem;
 }
 
-.evcs-back-color, input[type=range]+.thumb, .selectStationBtn:focus {
-    background-color: #7ED45E;
+.evcs-header h4,
+.evcs-header h6 {
+  margin: 0rem;
+}
+
+.evcs-back-color,
+input[type="range"] + .thumb,
+.selectStationBtn:focus {
+  background-color: #7ed45e;
 }
 
 .evcs-text-color {
-  color: #7ED45E;
+  color: #7ed45e;
+}
+
+.evcs-tagline {
+  font-style: bold;
 }
 
 .evcs-text {
@@ -26,7 +37,7 @@ body {
   font-weight: bold;
 }
 
-.evcs-main{
+.evcs-main {
   padding-top: 1%;
   max-width: 95%;
   width: 95%;
@@ -35,18 +46,20 @@ body {
 }
 
 .no-margin {
-  margin:0px;
+  margin: 0px;
 }
 
 .location-info {
   display: block;
 }
 
-.dropdown-content li > span, select > option, .select {
+.dropdown-content li > span,
+select > option,
+.select {
   font-size: 15px;
 }
 
-.search-button-margin{
+.search-button-margin {
   margin-top: 2em;
 }
 
@@ -65,15 +78,17 @@ body {
   height: auto;
   overflow-y: auto;
 }
- 
-html, body {
+
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 /* =============== */
-.btn, .footer {
-  background-color: #7ED45E;
+.btn,
+.footer {
+  background-color: #7ed45e;
 }
 
 .footer {
@@ -88,27 +103,28 @@ html, body {
   z-index: 1;
 }
 
-.search-container{
+.search-container {
   padding-top: 0%;
   padding-bottom: 0%;
 }
 
-.selectStationBtn{
+.selectStationBtn {
   margin-right: 1rem;
 }
 
 /* "search" button margin scales for smaller viewports*/
 @media (max-width: 600px) {
-  .search-button-margin{
+  .search-button-margin {
     margin-top: auto;
-  }  
-}  
+  }
+}
 
 @media (max-width: 992px) {
   #search-results {
     margin-bottom: 1rem;
+    max-height: unset;
   }
-  
+
   #map {
     margin-bottom: 5rem;
   }
